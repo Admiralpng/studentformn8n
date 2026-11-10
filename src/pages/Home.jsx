@@ -114,7 +114,7 @@ export const Home = () => {
                             <textarea name="feedback" placeholder="Enter your feedback here. Please also note a solution to any given problem(s)." value={formData.feedback} onChange={handleChange} />
                         </div>
                     </Field>
-                    <button type="submit">Submit Form</button>
+                    <button type="submit"><strong>Submit Form</strong></button>
                 </section>
             </form>
         </HomeContainer>

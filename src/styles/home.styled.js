@@ -6,7 +6,7 @@ export const HomeContainer = styled.div`
   flex-direction: column;
   justify-content: center;
   max-width: 100vw;
-  padding: 45px 18px;
+  padding: 45px 18px 138px;
   row-gap: 25px;
 
   & > form {

@@ -12,7 +12,7 @@ export const ErrorFormModal = () => {
             </ModalHeader>
             <ModalBody>
                 <h1>Oops!</h1>
-                <p><small>EITHER FORM IS INCOMPLETE OR A MISTAKE WAS DETECTED.</small></p>
+                <p><small>THE FORM IS EITHER INCOMPLETE OR A MISTAKE WAS DETECTED. PLEASE TRY AGAIN!</small></p>
             </ModalBody>
             <ModalFooter>
                 <img src={errorImg} alt="Error form submission" />

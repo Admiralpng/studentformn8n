@@ -42,10 +42,13 @@ export const Footer = styled.footer`
   align-items: center;
   padding: 28px 75px 28px 56px;
   gap: 40px;
-  max-width: 100vw;
+  width: 100vw;
   background-color: ${(props) => props.theme.colors.border};
   border-top: 1px solid ${(props) => props.theme.colors.border};
   box-shadow: 0px -8px 10px rgba(0, 0, 0, 0.4);
+  position: fixed;
+  z-index: 10;
+  bottom: 0vh;
 
   p{
     font-size: 0.85rem;

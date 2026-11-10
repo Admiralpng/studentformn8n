@@ -36,7 +36,7 @@ export const darkTheme = {
         default: "#bcc1c7",
 
         text: "#f6f1eb",
-        border: "transparent",
+        border: "#202124",
     },
     
     size: {
