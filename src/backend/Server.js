@@ -1,5 +1,5 @@
 export const N8N_URL = "https://admiral-zaio.app.n8n.cloud/webhook/student-feedback";
-export const N8N_COPY_URL = "https://admiral-zaio.app.n8n.cloud/webhook-waiting/23?signature=676eeb4642eff48c2d303de6cc0390584fe46600839c52643e1772005e2ccdf9";
+export const N8N_COPY_URL = " https://admiral-zaio.app.n8n.cloud/webhook-waiting/24?signature=4504398d18824c0c3b75439081c41cee2f657dee4fb62a777cbae8611f2ca2ee";
 
 export async function submitFeedback(payload) {
   const res = await fetch(N8N_URL, {
