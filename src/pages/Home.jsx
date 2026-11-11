@@ -67,13 +67,13 @@ export const Home = () => {
         feedback: '',
     })
 
-    const handleChange = (e) => {
-        const { name, value } = e.target
+    const handleChange = (event) => {
+        const { name, value } = event.target
         setFormData((prev) => ({ ...prev, [name]: value }))
     }
 
-    const handleSubmit = async (e) => {
-        e.preventDefault()
+    const handleSubmit = async (event) => {
+        event.preventDefault()
         const { firstName, lastName, emailAddress, course, question, rating, feedback } = formData
         const allFilled = [firstName, lastName, emailAddress, course, question, rating, feedback]
             .every((v) => v.trim() !== '')

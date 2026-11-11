@@ -94,9 +94,15 @@ export const HeaderContainer = styled.div`
       -webkit-text-stroke: 2px ${(props) => props.theme.colors.tertiary};
       text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
       letter-spacing: 1px;
+      ${(props) => props.theme.media.mobile} {
+        font-size: 2.2rem;
+      }
     }
     h2{
       font-size: 0.85rem;
+      ${(props) => props.theme.media.mobile} {
+        font-size: 1rem;
+      }
     }
   }
 `
