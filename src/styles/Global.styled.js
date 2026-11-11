@@ -49,13 +49,20 @@ export const Footer = styled.footer`
   position: fixed;
   z-index: 10;
   bottom: 0vh;
+  ${(props) => props.theme.media.mobile} {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 14px;
+      padding: 28px 20px 28px 38px;
+  }
 
   p{
     font-size: 0.85rem;
-  }
-  
-  & > :first-child{
-    
+    ${(props) => props.theme.media.mobile} {
+      font-size: 1.2rem;
+      font-weight: 700;
+    }
   }
 
   section{

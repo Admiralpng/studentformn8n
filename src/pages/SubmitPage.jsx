@@ -1,13 +1,11 @@
 import React from 'react'
-import { HomeContainer } from '../styles/home.styled'
+import { SubPageContainer } from '../styles/submitpage.styled'
+import { FormSubModal } from '../components/Modal/FormSubModal'
 
 export const SubmitPage = () => {
     return (
-        <HomeContainer>
-            you have completed the student feedback form. <br></br>
-            Thank you for your time and effort in providing valuable feedback.
-            Your input is greatly appreciated and will
-            help us improve our courses and services.
-        </HomeContainer>
+        <SubPageContainer>
+            <FormSubModal />
+        </SubPageContainer>
     )
 }

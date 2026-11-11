@@ -10,7 +10,6 @@ export const ModalContainer = styled.div`
     max-width: 480px;
     background: #f6f1eb;
     border-radius: 10px;
-    z-index: 1;
 
     img {
         max-width: 180px;

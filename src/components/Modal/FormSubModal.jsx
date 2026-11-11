@@ -1,22 +1,25 @@
 import React from 'react';
-import { ErrorForm } from '../../styles/components styles/Modal/ErrorFormModal.styled.js';
+import { SubmittedForm } from '../../styles/components styles/Modal/FormSubModal.styled.js';
 import { ModalHeader, ModalBody, ModalFooter } from '../../styles/components styles/Modal/Notif.styled.js';
-import errorImg from '../../assets/Error.png';
 import { LogoIcon } from '../../assets/Icons.jsx';
 
-export const ErrorFormModal = () => {
+export const FormSubModal = () => {
     return (
-        <ErrorForm className="error-modal">
+        <SubmittedForm className="submitted-modal">
             <ModalHeader>
-                <LogoIcon />
+                <h1>Form Submitted!</h1>
             </ModalHeader>
             <ModalBody>
-                <h1>Oops!</h1>
-                <p><small>EITHER FORM IS INCOMPLETE OR A MISTAKE WAS DETECTED.</small></p>
+                <p>You have completed the student feedback form.<br></br>
+                    Thank you for your time and effort in providing valuable feedback.<br></br>
+                    Your input is greatly appreciated and will
+                    help us improve our courses and services.
+                </p>
             </ModalBody>
+            <br></br>
             <ModalFooter>
-                <img src={errorImg} alt="Error form submission" />
+                <button type="submit">Receive a Copy</button>
             </ModalFooter>
-        </ErrorForm>
+        </SubmittedForm>
     );
 };

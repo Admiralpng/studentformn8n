@@ -1,6 +1,7 @@
 import styled from "styled-components"
 
 export const ErrorForm = styled.div`
+    
     &:>nth-child(1){
         margin-bottom: 12px;
     }
