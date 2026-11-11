@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom'
 import { HomeContainer, Field } from '../styles/home.styled'
 import { ModalContext } from '../contexts/ModalContext'
 import { ErrorFormModal } from '../components/Modal/ErrorFormModal'
+import { submitFeedback } from '../backend/Server'
 
 const courses = [
     'Graphic Design & Media',
@@ -55,6 +56,7 @@ const Dropdown = ({ name, label, options, value, onChange }) => {
 export const Home = () => {
     const navigate = useNavigate()
     const { handleModal } = useContext(ModalContext)
+    const [submitting, setSubmitting] = useState(false)
     const [formData, setFormData] = useState({
         firstName: '',
         lastName: '',
@@ -70,7 +72,7 @@ export const Home = () => {
         setFormData((prev) => ({ ...prev, [name]: value }))
     }
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault()
         const { firstName, lastName, emailAddress, course, question, rating, feedback } = formData
         const allFilled = [firstName, lastName, emailAddress, course, question, rating, feedback]
@@ -81,7 +83,24 @@ export const Home = () => {
             return
         }
 
-        navigate('/form-submitted')
+        const payload = {
+            studentName: `${firstName.trim()} ${lastName.trim()}`.trim(),
+            email: emailAddress.trim(),
+            courseName: course,
+            rating: Number(rating),
+            feedbackMessage: feedback.trim(),
+            gained: question.trim(),
+        }
+
+        try {
+            setSubmitting(true)
+            await submitFeedback(payload)
+            navigate('/form-submitted', { state: { submission: payload } })
+        } catch (err) {
+            handleModal(<ErrorFormModal />)
+        } finally {
+            setSubmitting(false)
+        }
     }
 
     return (
@@ -114,7 +133,7 @@ export const Home = () => {
                             <textarea name="feedback" placeholder="Enter your feedback here. Please also note a solution to any given problem(s)." value={formData.feedback} onChange={handleChange} />
                         </div>
                     </Field>
-                    <button type="submit">Submit Form</button>
+                    <button type="submit" disabled={submitting}>{submitting ? 'Submitting...' : 'Submit Form'}</button>
                 </section>
             </form>
             <span className="Mark"><small><strong>StackBinder Forms</strong></small></span>

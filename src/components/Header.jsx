@@ -11,7 +11,7 @@ const Header = () => {
         <HeaderContainer>
             <section>
                 <div className="vivid-bg" aria-hidden="true"></div>
-                <h1>StackBinder</h1>
+                <Link to="/"><h1>StackBinder</h1></Link>
                 <h2>TERTIARY STUDENT FEEDBACK FORM</h2>
             </section>
             <div>

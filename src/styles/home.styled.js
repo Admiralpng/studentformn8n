@@ -19,6 +19,9 @@ export const HomeContainer = styled.div`
     align-items: center;
     opacity: 0.25;
     transform: scaleY(60%);
+    ${(props) => props.theme.media.mobile}{
+      font-size: 1.8rem;
+    }
   }
 
   & > form {
@@ -42,7 +45,7 @@ export const HomeContainer = styled.div`
       border-radius: 5px;
       font-size: 1.05rem;
       padding: 8px 12px;
-      color: ${(props) => props.theme.colors.text};
+      color: #141516;
       outline: 2px solid transparent;
       margin-bottom: 8px;
 
@@ -71,7 +74,7 @@ export const HomeContainer = styled.div`
         background-color: white;
         font-size: 1.05rem;
         padding: 8px 12px;
-        color: #5a5a5a;
+        color: #141516;
         cursor: pointer;
         margin-bottom: 8px;
 

@@ -49,6 +49,11 @@ export const HeaderContainer = styled.div`
       cursor: pointer;
     }
   }
+
+  a{
+    text-decoration: none;
+    color: inherit;
+  }
   
   section{
     position: relative;
