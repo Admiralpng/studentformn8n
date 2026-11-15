@@ -103,7 +103,7 @@ export const HomeContainer = styled.div`
         border: 1px solid ${(props) => props.theme.colors.default};
         border-radius: 5px;
         overflow: hidden;
-        background-color: ${(props) => props.theme.colors.primary};
+        background-color: white;
 
         li button {
           width: 100%;
@@ -113,14 +113,13 @@ export const HomeContainer = styled.div`
           padding: 8px 12px;
           font-size: 1.05rem;
           text-align: left;
-          background-color: ${(props) => props.theme.colors.primary};
-          color: ${(props) => props.theme.colors.text};
+          background-color: white;
+          color: #141516;
           cursor: pointer;
           outline: none;
 
           &:hover {
             background-color: ${(props) => props.theme.colors.default};
-            color: ${(props) => props.theme.colors.text};
             transition: ease 150ms;
           }
         }

@@ -3,14 +3,15 @@ import { SubmittedForm } from '../../styles/components styles/Modal/FormSubModal
 import { ModalHeader, ModalBody, ModalFooter } from '../../styles/components styles/Modal/Notif.styled.js';
 import { requestCopy } from '../../backend/Server';
 
-export const FormSubModal = ({ submission }) => {
+export const FormSubModal = ({ submission, copyUrl }) => {
     const [status, setStatus] = useState('idle');
+    const canSendCopy = !!(submission?.email && copyUrl);
 
     const handleReceiveCopy = async () => {
-        if (!submission || status === 'sending' || status === 'sent') return;
+        if (!canSendCopy || status === 'sending' || status === 'sent') return;
         try {
             setStatus('sending');
-            await requestCopy(submission);
+            await requestCopy(copyUrl, submission);
             setStatus('sent');
         } catch (err) {
             setStatus('error');
@@ -33,10 +34,10 @@ export const FormSubModal = ({ submission }) => {
             </ModalBody>
             <br></br>
             <ModalFooter>
-                <button id="copyBtn" type="button" onClick={handleReceiveCopy} disabled={!submission || status === 'sending' || status === 'sent'}>
+                <button id="copyBtn" type="button" onClick={handleReceiveCopy} disabled={!canSendCopy || status === 'sending' || status === 'sent'}>
                     {label}
                 </button>
-                {!submission && <small>Submission data unavailable. Please submit the form again.</small>}
+                {!canSendCopy && <small>Copy unavailable. Please submit the form again.</small>}
                 {status === 'error' && <small>Could not send copy. Please try again.</small>}
             </ModalFooter>
         </SubmittedForm>

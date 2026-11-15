@@ -6,10 +6,11 @@ import { FormSubModal } from '../components/Modal/FormSubModal'
 export const SubmitPage = () => {
     const { state } = useLocation()
     const submission = state?.submission
+    const copyUrl = state?.copyUrl
 
     return (
         <SubPageContainer>
-            <FormSubModal submission={submission} />
+            <FormSubModal submission={submission} copyUrl={copyUrl} />
         </SubPageContainer>
     )
 }

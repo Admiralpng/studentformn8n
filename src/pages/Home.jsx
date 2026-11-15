@@ -94,8 +94,9 @@ export const Home = () => {
 
         try {
             setSubmitting(true)
-            await submitFeedback(payload)
-            navigate('/form-submitted', { state: { submission: payload } })
+            const result = await submitFeedback(payload)
+            const copyUrl = result?.copyUrl
+            navigate('/form-submitted', { state: { submission: payload, copyUrl } })
         } catch (err) {
             handleModal(<ErrorFormModal />)
         } finally {
